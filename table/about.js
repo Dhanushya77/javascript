@@ -101,6 +101,9 @@ function display() {
         let delete_td=document.createElement('td');
         let delete_btn=document.createElement('button')
         delete_btn.textContent="delete"
+        delete_btn.onclick=function(){
+            delete_data(i.id)
+        }
         delete_td.appendChild(delete_btn)
         tr.appendChild(delete_td)
 
@@ -128,7 +131,6 @@ function edit_form(id){
     console.log(id)
     document.getElementById("edit_form").style.display="block"
     document.getElementById("add_form").style.display="none"
-
     edit_data=data.find(user=>user.id==id)
     console.log(edit_data);
     document.getElementById("eno").value=edit_data.id
@@ -154,5 +156,14 @@ document.getElementById("edit_form").addEventListener('submit',function(event){
     document.getElementById("add_form").style.display='block'
     display()
 })
+
+function delete_data(id){
+    data=data.filter(user=>{
+        if(user.id!=id){
+            return user
+        }
+    })
+    display()
+}
 
 display()
