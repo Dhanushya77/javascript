@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //{ class Student{
+        //    constructor(name){
+        //        this.name = name
+        //    }
+        //    display(){
+        //        console.log('name', this.name);
+        //    }
+        //}
+        //let obj=new Student('manu')
+        //obj.display() }
+
+        //INHERITANCE
+
+        class Teacher{
+            display(){
+                console.log('teacher notes');
+            }
+        }
+        class Std extends Teacher{
+            note(){
+                console.log('std notes')
+            }
+        }
+        obj=new Std()
+        obj.note()
+        obj.display()
+    </script>
+</body>
+</html>
