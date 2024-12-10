@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input type="tel" id="a1" >
+        <h5 id="demo"></h1>
+        <input type="submit" value="add">
+    </form>
+
+    <script>
+       document.getElementById("form").addEventListener('submit',function(event){
+        event.preventDefault()
+        let phno = document.getElementById("a1").value
+        let h5=document.getElementById("demo")
+        if (/^[6-9]\d{9}$/.test(phno)){
+            h5.innerHTML='Valid'
+            h5.style.color='green'
+        }
+        else{
+            h5.innerHTML='*Invalid'
+            h5.style.color='red'
+        }
+        document.getElementById("a1").value=''
+       }) 
+    </script>
+</body>
+</html>
